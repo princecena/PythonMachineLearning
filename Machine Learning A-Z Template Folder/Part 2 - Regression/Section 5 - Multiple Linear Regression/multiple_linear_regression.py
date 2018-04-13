@@ -40,9 +40,15 @@ regressor.fit(X_train, y_train)
 # Predicting the Test set results
 y_pred = regressor.predict(X_test)
 
-#Backward Elimination with p-values only
+# From video - Backward Elimination with p-values only
 import statsmodels.formula.api as sm
 X = np.append(arr = np.ones((50,1)).astype(int),values = X, axis = 1)
+X_opt = X[:, [0, 1, 2, 3, 4, 5]]
+regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+regressor_OLS.summary()
+
+#Backward Elimination with p-values only
+import statsmodels.formula.api as sm
 def backwardElimination(x, sl):
     numVars = len(x[0])
     for i in range(0, numVars):
