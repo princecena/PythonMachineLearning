@@ -1,9 +1,13 @@
 # Polynomial Regression
 
 # Importing the libraries
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+
+# set the working directory
+os.chdir("/Users/princesharma/Documents/PythonMachineLearning/Machine Learning A-Z Template Folder/Part 2 - Regression/Section 6 - Polynomial Regression")
 
 # Importing the dataset
 dataset = pd.read_csv('Position_Salaries.csv')
@@ -64,3 +68,6 @@ lin_reg.predict(6.5)
 
 # Predicting a new result with Polynomial Regression
 lin_reg_2.predict(poly_reg.fit_transform(6.5))
+
+
+#https://stackoverflow.com/questions/47442102/how-to-find-the-best-degree-of-polynomials
